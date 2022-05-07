@@ -7,6 +7,7 @@ const list = async (_req: any, res: any) => {
         _id: 0,
         id: 1,
         name: 1,
+        dob: 1,
         bioLink: 1,
         policy: 1,
         imageURL: 1,
