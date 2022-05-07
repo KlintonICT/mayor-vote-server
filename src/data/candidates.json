@@ -1,0 +1,92 @@
+[
+  {
+    "id": "4",
+    "name": "Choco",
+    "dob": "14th February",
+    "bioLink": "https://line.fandom.com/wiki/Choco",
+    "policy": "Dressing up in fashionable clothes and taking selfies",
+    "imageURL": "https://static.wikia.nocookie.net/line/images/4/4c/IMG_3360.JPG/revision/latest",
+    "votedCount": 0
+  },
+  {
+    "id": "2",
+    "name": "Cony",
+    "dob": "17th April",
+    "bioLink": "https://line.fandom.com/wiki/Cony",
+    "policy": "Being kind and gentle to everyone",
+    "imageURL": "https://static.wikia.nocookie.net/line/images/1/10/2015-cony.png/revision/latest",
+    "votedCount": 0
+  },
+  {
+    "id": "1",
+    "name": "Brown",
+    "dob": "8th August",
+    "bioLink": "https://line.fandom.com/wiki/Brown",
+    "policy": "Eating salmon & dating Cony",
+    "imageURL": "https://static.wikia.nocookie.net/line/images/b/bb/2015-brown.png/revision/latest",
+    "votedCount": 0
+  },
+  {
+    "id": "8",
+    "name": "Pangyo",
+    "dob": "Chinese New Year",
+    "bioLink": "https://line.fandom.com/wiki/Pangyo",
+    "policy": "Making stuff using technologies, taking photographs, eat, sleep and play",
+    "imageURL": "https://static.wikia.nocookie.net/line/images/8/87/IMG_3361.JPG/revision/latest",
+    "votedCount": 0
+  },
+  {
+    "id": "6",
+    "name": "Leonard",
+    "dob": "15th January",
+    "bioLink": "https://line.fandom.com/wiki/Leonard",
+    "policy": "Singing in the rain",
+    "imageURL": "https://static.wikia.nocookie.net/line/images/1/1d/2015-leonard.png/revision/latest",
+    "votedCount": 0
+  },
+  {
+    "id": "9",
+    "name": "Boss",
+    "dob": "15th June",
+    "bioLink": "https://line.fandom.com/wiki/Boss",
+    "policy": "Let arrive home late",
+    "imageURL": "https://static.wikia.nocookie.net/line/images/f/fb/81372a8b249c461eb815ac11e1317c86.png/revision/latest",
+    "votedCount": 0
+  },
+  {
+    "id": "7",
+    "name": "Leonard",
+    "dob": "15th January",
+    "bioLink": "https://line.fandom.com/wiki/Leonard",
+    "policy": "Singing in the rain",
+    "imageURL": "https://static.wikia.nocookie.net/line/images/1/1d/2015-leonard.png/revision/latest",
+    "votedCount": 0
+  },
+  {
+    "id": "5",
+    "name": "Moon",
+    "dob": "6th October",
+    "bioLink": "https://line.fandom.com/wiki/Moon",
+    "policy": "Sleeping, playing video games, being in a burger bar, joking & go crazy",
+    "imageURL": "https://static.wikia.nocookie.net/line/images/5/58/2015-moon.png/revision/latest",
+    "votedCount": 0
+  },
+  {
+    "id": "10",
+    "name": "James",
+    "dob": "14th February",
+    "bioLink": "https://line.fandom.com/wiki/James",
+    "policy": "Looking himself in the mirror, hang with girls, cooking & reading",
+    "imageURL": "https://static.wikia.nocookie.net/line/images/2/2f/2015-james.png/revision/latest",
+    "votedCount": 0
+  },
+  {
+    "id": "3",
+    "name": "Sally",
+    "dob": "27th April",
+    "bioLink": "https://line.fandom.com/wiki/Sally",
+    "policy": "Tag-along with Brown",
+    "imageURL": "https://static.wikia.nocookie.net/line/images/a/af/Image-1.jpg/revision/latest",
+    "votedCount": 0
+  }
+]
