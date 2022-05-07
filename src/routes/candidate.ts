@@ -1,9 +1,9 @@
 import express from 'express';
-import CandidateController from '../controller/candidate/index';
+import { list } from '../controller/candidate';
 
 const router = express.Router();
 
 // GET Candidates
-router.get('/', CandidateController.list);
+router.get('/', list);
 
 export default router;
