@@ -59,7 +59,9 @@ const voteIO = io.of('/vote');
 
 voteIO.on('connection', (socket: any) => {
   socket.on('post-vote', async (candidateId: string) => {
-    const candidate = await CandidateModel.findOne({ id: candidateId });
+    const candidate = await CandidateModel.findOne({ id: candidateId }).select(
+      '-_id id votedCount'
+    );
     socket.emit('new-vote', candidate);
   });
 });
