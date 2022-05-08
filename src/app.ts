@@ -36,6 +36,7 @@ mongoose
 const app = express();
 const db = mongoose.connection;
 const server = http.createServer(app);
+const io = require('socket.io')(server);
 
 app.use(cors());
 app.use(logger('dev'));
@@ -51,5 +52,14 @@ db.on('error', console.error.bind(console, 'db connection error: '));
 db.on('open', () => {
   server.listen(process.env.PORT || 4000, () => {
     console.log(`Server is running on port ${process.env.PORT || 4000}`);
+  });
+});
+
+const voteIO = io.of('/vote');
+
+voteIO.on('connection', (socket: any) => {
+  socket.on('post-vote', async (candidateId: string) => {
+    const candidate = await CandidateModel.findOne({ id: candidateId });
+    socket.emit('new-vote', candidate);
   });
 });
