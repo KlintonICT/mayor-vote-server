@@ -5,7 +5,7 @@ const status = async (req: any, res: any) => {
     const { nationalId } = req.body;
     const voter = await VoterModel.findOne({ nationalId });
 
-    return res.status(200).json({ status: !!voter });
+    return res.status(200).json({ status: voter === null });
   } catch (error) {
     console.log('Error', error);
     return res.status(500).json({ message: 'Oops! Something went wrong!' });
