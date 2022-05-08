@@ -9,8 +9,11 @@ import mongoose from 'mongoose';
 
 import CandidateData from './data/candidates.json';
 import CandidateModel from './models/candidate';
+import ElectionStatusModel from './models/electionStatus';
 
 import CandidateRouter from './routes/candidate';
+import ElectionRouter from './routes/election';
+import VoterRouter from './routes/voter';
 
 mongoose
   .connect(process.env.MONGO_URI || 'mongodb://localhost/mayor-vote', {
@@ -20,9 +23,13 @@ mongoose
   })
   .then(async () => {
     const candidates = (await CandidateModel.find()) || [];
+    const electionStatus = (await ElectionStatusModel.find()) || [];
 
     if (candidates.length === 0) {
       await CandidateModel.insertMany(CandidateData);
+    }
+    if (electionStatus.length === 0) {
+      await ElectionStatusModel.create({ enable: false });
     }
   });
 
@@ -37,6 +44,8 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/candidates', CandidateRouter);
+app.use('/api/election', ElectionRouter);
+app.use('/api/vote', VoterRouter);
 
 db.on('error', console.error.bind(console, 'db connection error: '));
 db.on('open', () => {
