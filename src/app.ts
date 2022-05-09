@@ -6,6 +6,7 @@ import cors from 'cors';
 import logger from 'morgan';
 import express from 'express';
 import mongoose from 'mongoose';
+import { Server } from 'socket.io';
 
 import CandidateData from './data/candidates.json';
 import CandidateModel from './models/candidate';
@@ -35,8 +36,8 @@ mongoose
 
 const app = express();
 const db = mongoose.connection;
-const server = http.createServer(app);
-const io = require('socket.io')(server);
+const httpServer = http.createServer(app);
+const io = new Server(httpServer, { cors: { origin: '*' } });
 
 app.use(cors());
 app.use(logger('dev'));
@@ -50,7 +51,7 @@ app.use('/api/vote', VoterRouter);
 
 db.on('error', console.error.bind(console, 'db connection error: '));
 db.on('open', () => {
-  server.listen(process.env.PORT || 4000, () => {
+  httpServer.listen(process.env.PORT || 4000, () => {
     console.log(`Server is running on port ${process.env.PORT || 4000}`);
   });
 });
