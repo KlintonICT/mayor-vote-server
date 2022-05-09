@@ -1,4 +1,4 @@
-require('dotenv-safe').config();
+require('dotenv-safe').config({ allowEmpty: true });
 
 import http from 'http';
 import path from 'path';
@@ -16,8 +16,13 @@ import CandidateRouter from './routes/candidate';
 import ElectionRouter from './routes/election';
 import VoterRouter from './routes/voter';
 
+const { ENVIRONMENT, MONGO_URI, MONGO_URI_TEST } = process.env;
+const database: string =
+  (ENVIRONMENT === 'test' ? MONGO_URI_TEST : MONGO_URI) ||
+  'mongodb://localhost/mayor-vote';
+
 mongoose
-  .connect(process.env.MONGO_URI || 'mongodb://localhost/mayor-vote', {
+  .connect(database, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

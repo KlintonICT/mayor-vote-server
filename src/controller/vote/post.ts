@@ -1,11 +1,19 @@
 import VoterModel from '../../models/voter';
 import CandidateModel from '../../models/candidate';
 import ElectionResultModel from '../../models/electionResult';
-import { getElectionStatus } from '../../utils';
+import { getElectionStatus, isNationalID } from '../../utils';
 
 const post = async (req: any, res: any) => {
   try {
     const { nationalId, candidateId } = req.body;
+
+    if (!isNationalID(nationalId)) {
+      return res.status(200).json({
+        status: 'error',
+        message: 'Your nationalId is incorrect',
+      });
+    }
+
     const [voter, { enable }] = await Promise.all([
       VoterModel.findOne({ nationalId }),
       getElectionStatus(),
