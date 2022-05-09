@@ -4,7 +4,7 @@
 
 `$ docker-compose up`
 
-## Local Commands
+### How to run in local
 
 - Make sure you have mongodb installed in your machine
 - Copy .env.example to your local .env
