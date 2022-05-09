@@ -28,6 +28,7 @@ services:
       - PORT=4000
       - MONGO_URI=mongodb://mongodb-user:mongodb-pass@mayor-vote-db:27017/mayor-vote?authSource=admin
       - ENVIRONMENT=production
+      - MONGO_URI_TEST=mongodb://mongodb-user:mongodb-pass@mayor-vote-db:27017/mayor-vote-test?authSource=admin
     stdin_open: true
     tty: true
 
