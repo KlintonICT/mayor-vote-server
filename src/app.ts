@@ -64,5 +64,6 @@ voteIO.on('connection', (socket: any) => {
       '-_id id votedCount'
     );
     socket.emit('new-vote', candidate);
+    socket.broadcast.emit('new-vote', candidate);
   });
 });
