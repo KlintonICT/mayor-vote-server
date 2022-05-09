@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  mayor-vote-db:
+    image: mongo:latest
+    restart: unless-stopped
+    environment: 
+      - MONGO_INITDB_ROOT_USERNAME=mongodb-user
+      - MONGO_INITDB_ROOT_PASSWORD=mongodb-pass
+    volumes:
+      - ./mongodb:/data/db
+    ports:
+      - 27017:27017
+  
+  mayor-vote-server:
+    depends_on: 
+      - mayor-vote-db
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 4000:4000
+    environment:
+      - PORT=4000
+      - MONGO_URI=mongodb://mongodb-user:mongodb-pass@mayor-vote-db:27017/mayor-vote?authSource=admin
+    stdin_open: true
+    tty: true
+
+volumes:
+  mongodb:
